@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surya E-Mitra CSC Center | Kalyanpura Kalan</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #0f172a; /* Deep Navy Blue */
+            --secondary-color: #d97706; /* Gold/Orange */
+            --accent-color: #fbbf24;
+            --light-bg: #f8fafc;
+            --text-dark: #334155;
+            --text-light: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        header {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+        
+        .logo span {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1556761175-5973dc0f32b7?auto=format&fit=crop&q=80') center/cover;
+            color: var(--text-light);
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h2 {
+            font-size: 2.8rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-inline: auto;
+        }
+
+        .btn {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #b45309;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 60px 5%;
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 40px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            border-bottom: 4px solid var(--secondary-color);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: white;
+            padding: 60px 5%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: space-between;
+        }
+
+        .contact-info, .contact-map {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-info h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .info-item i {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            width: 40px;
+        }
+
+        .owner-tag {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+
+        /* Responsive Navbar */
+        .menu-toggle {
+            display: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-color);
+                text-align: center;
+                padding: 20px 0;
+            }
+            nav ul.active {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <h1>Surya E-Mitra</h1>
+            <span>CSC Center & RGB Bank BC</span>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h2>आपका डिजिटल, बैंकिंग और कस्टम प्रिंटिंग पार्टनर</h2>
+        <p>हम Kalyanpura Kalan में ई-मित्र, बैंकिंग, ऑनलाइन फॉर्म के साथ टी-शर्ट, मग/कप और सभी कस्टम गिफ्ट प्रिंटिंग की सुविधा देते हैं।</p>
+        <a href="#contact" class="btn">हमसे संपर्क करें</a>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2>हमारी प्रमुख सेवाएँ (Our Services)</h2>
+        <div class="services-grid">
+            
+            <div class="service-card">
+                <i class="fas fa-id-card"></i>
+                <h3>E-Mitra & CSC</h3>
+                <p>जाति प्रमाण पत्र, मूल निवास, आधार कार्ड अपडेट, पैन कार्ड, और सभी सरकारी योजना के फॉर्म।</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-university"></i>
+                <h3>Banking (RGB Bank BC)</h3>
+                <p>AEPS, नकद जमा (Cash Deposit), नकद निकासी (Cash Withdrawal) और नया खाता खोलना।</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-tshirt"></i>
+                <h3>T-Shirt & Mug Printing</h3>
+                <p>कस्टम टी-शर्ट फोटो प्रिंटिंग, फोटो मग/कप ग्लास प्रिंटिंग, और पर्सनलाइज्ड गिफ्ट आइटम प्रिंटिंग।</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-print"></i>
+                <h3>Printing & Photo Services</h3>
+                <p>कलर/ब्लैक एंड व्हाइट फोटोकॉपी, पासपोर्ट साइज फोटो, लैमिनेशन और एचडी ग्राफिक डिजाइनिंग।</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-laptop"></i>
+                <h3>Online Forms</h3>
+                <p>सभी प्रकार के सरकारी नौकरी के फॉर्म, परीक्षा फॉर्म, और स्कॉलरशिप आवेदन भरें।</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-gift"></i>
+                <h3>Custom Gifts & Printing</h3>
+                <p>की-चेन, पिलो (Pillow), फ्रेम और अन्य सभी प्रकार की कस्टमाइज्ड प्रिंटिंग सर्विस उपलब्ध।</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-info">
+            <h2>संपर्क करें (Contact Us)</h2>
+            
+            <div class="info-item">
+                <i class="fas fa-user-tie"></i>
+                <div>
+                    <strong>Proprietor:</strong> Abhi Narwar
+                </div>
+            </div>
+
+            <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <strong>Address:</strong> Kalyanpura Kalan, Kotputli, Rajasthan
+                </div>
+            </div>
+
+            <div class="info-item">
+                <i class="fas fa-phone-alt"></i>
+                <div>
+                    <strong>Mobile:</strong> +91 84419 44048
+                </div>
+            </div>
+
+            <div class="info-item">
+                <i class="fas fa-clock"></i>
+                <div>
+                    <strong>Timings:</strong> 8:00 AM - 8:00 PM (Daily)
+                </div>
+            </div>
+
+            <div class="owner-tag">Surya E-Mitra CSC Center</div>
+        </div>
+
+        <div class="contact-map">
+            <div style="width: 100%; height: 300px; background-color: #e2e8f0; display: flex; align-items: center; justify-content: center; border-radius: 10px; border: 2px dashed #cbd5e1;">
+                <p style="color: #64748b; font-size: 1.2rem;"><i class="fas fa-map"></i> Google Map Area<br>(Location: Kalyanpura Kalan)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Surya E-Mitra CSC Center. All Rights Reserved. | Designed for Abhi Narwar</p>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/918441944048?text=Hello%20Surya%20E-Mitra,%20I%20want%20to%20inquire%20about%20printing%20services." class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Simple Script for Mobile Menu -->
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("nav-menu");
+            menu.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>
+
